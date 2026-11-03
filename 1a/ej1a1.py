@@ -40,8 +40,26 @@ Exemple:
 '''
 
 def fibonacci(fibonacci_number):
-    # Write here your code
-    pass
+    # 1. Validar que sigui un numero enter
+    if type (fibonacci_number) is not int: 
+        raise ValueError ("El valor introduït ah de ser un numero enter")
+
+    #2. Validar que no sigui menor a cero
+    if fibonacci_number < 0:
+        raise ValueError ("El numero no pot ser emnor a cero")
+
+    # 3. Valors d'inic: si demanem la posició 0 dona 0, i si demanem la posició 1 dona 1
+    if fibonacci_number == 0:
+        return 0
+    elif fibonacci_number == 1:
+        return 1
+
+    # Càlcul per a posicions majors que 1
+    a, b = 0, 1
+    for _ in  range (2, fibonacci_number +1):
+        a, b = b, a + b
+    return b
+    
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
