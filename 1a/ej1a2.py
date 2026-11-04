@@ -41,10 +41,21 @@ Exemple:
 
 '''
 
+from numpy import number
+
+
 def sum_odd_numbers(list_numbers):
-    # Write here your code
-    pass
+
+    # 1.  Validar que tots els elements de la llista siguin enters i majors o iguals a 0
+    for number in list_numbers:
+        if type(number) is not int or number < 0:
+            raise ValueError("Tots els elements de la llista han de ser enters majors o iguals a 0")
+
+    # 2.Calcular la suma dels números imparells
+    suma_imparells = sum(number for number in list_numbers if number % 2 != 0)
+    
+    return suma_imparells
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# print(sum_odd_numbers([1, 2, 3, 4, 5, 10, 21, 100]))
+print(sum_odd_numbers([1, 2, 3, 4, 5, 10, 21, 100]))
