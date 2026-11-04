@@ -66,8 +66,15 @@ Exemple:
 import math
 
 def calculate_angle(angle):
-    # Write here your code
-    pass
+    # 1. Convertim l'angle de graus a radiants
+    constants_radiants = math.radians(angle)
+    
+    # 2. Calculem el sinus d'aquest angle en radiants
+    sinus_angle = math.sin(constants_radiants)
+    
+    # 3. Arrodonim el resultat a 2 decimals i el retornem
+    return round(sinus_angle, 2)
+
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
