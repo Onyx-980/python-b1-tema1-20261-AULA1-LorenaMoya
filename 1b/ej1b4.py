@@ -65,8 +65,22 @@ Exemple:
 import numpy as np
 
 def results(list_numbers):
-    # Write here your code
-    pass
+    # 1. Calculem la mitjana de la llista
+    average = np.mean(list_numbers)
+    
+    # 2. Calculem la desviació estàndard de la llista
+    std_deviation = np.std(list_numbers)
+    
+    # 3. Arrodonim els resultats a 2 decimals
+    average_rounded = round(average, 2)
+    std_deviation_rounded = round(std_deviation, 2)
+    
+    # 4. Imprimim els resultats en pantalla
+    print(f"Average: {average_rounded}")
+    print(f"Standard deviation: {std_deviation_rounded}")
+    
+    # 5. Retornem els resultats com a tupla
+    return (average_rounded, std_deviation_rounded)
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
