@@ -41,8 +41,12 @@ Exemple:
 
 
 def is_palindrome(word):
-    # Write here your code
-    pass
+    # Cas base: si la longitut de la paraula es 0 o 1, es un palíndrom
+    if len(word) <= 1:
+        return True
+    # Cas recursiu: comparem el primer y l'últim caràcter i cridem a la funció amb la subcadena
+    else:
+        return word[0] == word[-1] and is_palindrome(word[1:-1])  
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
@@ -50,5 +54,5 @@ def is_palindrome(word):
 # word = "level"
 # print(f"Is '{word}' word palindrome?", is_palindrome(word))
 #
-# word = "juan"
-# print(f"Is '{word}' word palindrome?", is_palindrome(word))
+# word = "hannah"
+#print(f"Is '{word}' word palindrome?", is_palindrome(word))
