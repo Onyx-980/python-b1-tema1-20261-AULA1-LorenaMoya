@@ -38,8 +38,13 @@ Exemple:
 
 
 def find_max(lst):
-    # Write here your code
-    pass
+    # Cas base: si la llista té un sol element, retornem aquest element
+    if len(lst) == 1:
+        return lst[0]
+    else:
+        # Cas recursiu: comparem el primer element amb el màxim de la resta de la llista
+        max_of_rest = find_max(lst[1:])
+        return lst[0] if lst[0] > max_of_rest else max_of_rest
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
