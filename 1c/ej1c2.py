@@ -36,11 +36,15 @@ Exemple
 
 
 def invert_list(lst):
-    # Write here your code
-    pass
+    # Cas base: si la llista està buida o té un sol element, la retornem tal qual
+    if len(lst) <= 1:
+        return lst
+    # Cas recursiu: retornem l'últim element concatenat amb la inversió de la resta de la llista
+    else:
+        return [lst[-1]] + invert_list(lst[:-1])        
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
 # lst = [1, 20, 3, 40, 5]
-#print(invert_list(lst))
+# print(invert_list(lst))
